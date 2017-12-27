@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">65AppsTest</string>
+
+    <string name="error_empty_data">Sorry, but is seems that there is nothing here. \n Try to check internet and refresh data.</string>
+
+    <string name="title_specialities_activity">Specialities</string>
+    <string name="name">Name: </string>
+    <string name="surname">Surname: </string>
+    <string name="age">Age: </string>
+    <string name="birthday">Born at: </string>
+    <string name="speciality">Specialities: </string>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">65AppsTest</string>
+
+    <string name="error_empty_data">Извините, но похоже, что здесь ничего нет. \n Попробуйте проверить интернет и обновить данные.</string>
+
+    <string name="title_specialities_activity">Специальности</string>
+
+    <string name="name">Имя: </string>
+    <string name="surname">Фамилия: </string>
+    <string name="age">Возраст: </string>
+    <string name="birthday">Рожден: </string>
+    <string name="speciality">Специальности: </string>
+</resources>

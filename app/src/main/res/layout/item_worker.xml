@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgUserAvatar"
+            android:src="@drawable/ic_default_user"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            app:civ_border_width="4dp"
+            app:civ_border_color="@color/colorPrimary"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imgUserAvatar">
+
+            <TextView
+                android:id="@+id/tvNamePreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/name"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvSurnamePreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNamePreview"
+                android:padding="4dp"
+                android:text="@string/surname"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvAgePreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSurnamePreview"
+                android:padding="4dp"
+                android:text="@string/age"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tvNamePreview"
+                android:layout_toRightOf="@+id/tvNamePreview"
+                android:maxLines="1"
+                android:padding="4dp"
+                android:textSize="16sp"
+                tools:text="some" />
+
+            <TextView
+                android:id="@+id/tvUserSurname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUserName"
+                android:layout_toEndOf="@+id/tvSurnamePreview"
+                android:layout_toRightOf="@+id/tvSurnamePreview"
+                android:maxLines="1"
+                android:padding="4dp"
+                android:textSize="16sp"
+                tools:text="some" />
+
+            <TextView
+                android:id="@+id/tvAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUserSurname"
+                android:layout_toRightOf="@+id/tvAgePreview"
+                android:maxLines="1"
+                android:padding="4dp"
+                android:textSize="16sp"
+                tools:text="24" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

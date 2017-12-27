@@ -44,9 +44,9 @@ public class WorkersActivity extends BaseActivity<WorkersPresenter, WorkersMvpVi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Speciality currentSpeciality = (Speciality) getIntent().getExtras()
-                .getSerializable(CURRENT_SPECIALITY);
-        if (currentSpeciality != null) {
+        if (getIntent().getExtras()!= null) {
+            Speciality currentSpeciality = (Speciality) getIntent().getExtras()
+                    .getSerializable(CURRENT_SPECIALITY);
             setTitle(currentSpeciality.getName());
             mSwipeLayout.setOnRefreshListener(() ->
                     getPresenter().updateData(currentSpeciality.getId()));
@@ -68,6 +68,8 @@ public class WorkersActivity extends BaseActivity<WorkersPresenter, WorkersMvpVi
     protected void setupViews() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

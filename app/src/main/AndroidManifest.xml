@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.oromil.a65appstest">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,16 +14,32 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.main.MainActivity"
-            android:theme="@style/SplahhTheme">
+            android:theme="@style/SplahhTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.specialities.SpecialitiesActivity" />
-        <activity android:name=".ui.workers.WorkersActivity" />
-        <activity android:name=".ui.workerinfo.WorkerInfoActivity" />
+        <activity android:name=".ui.specialities.SpecialitiesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.workers.WorkersActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.specialities.SpecialitiesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.specialities.SpecialitiesActivity" />
+        </activity>
+        <activity android:name=".ui.workerinfo.WorkerInfoActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.workers.WorkersActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.workers.WorkersActivity" />
+        </activity>
+
     </application>
 
 </manifest>

@@ -2,8 +2,10 @@ package com.oromil.a65appstest.ui.workerinfo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.oromil.a65appstest.R;
@@ -55,6 +57,8 @@ public class WorkerInfoActivity extends BaseActivity<WorkerInfoPresenter, Worker
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent startIntent = getIntent();
         if (startIntent.getSerializableExtra(CURRENT_WORKER) != null) {
             Worker currentWorker = (Worker) startIntent.getSerializableExtra(CURRENT_WORKER);
@@ -71,6 +75,16 @@ public class WorkerInfoActivity extends BaseActivity<WorkerInfoPresenter, Worker
             mRecyclerView.setAdapter(mAdapter);
             mAdapter.updateData();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public static void start(Context context, Worker worker) {
